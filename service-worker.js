@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/webvpn4dut/precache-manifest.2881881d7db3a4eed51f7e2def59d004.js"
+  "/webvpn4dut/precache-manifest.1fde9fec464155456b0292dcd781810f.js"
 );
 
 self.addEventListener('message', (event) => {
