@@ -1,44 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# WebVpn4DUT
 
-## Available Scripts
+## 说明
 
-In the project directory, you can run:
+DUT 之前推出了 WebVpn 方便大家无法使用校园网时也能访问校内网站，但是它支持的网址有限。
 
-### `npm start`
+它的原理是通过一个函数 encode 这个你要访问的网址，然后把编码出来的网址加在`webvpn.dlut.edu.cn/`后，就能访问校内才能访问的地址了。比如说在 WebVpn 里访问教务处，实际是访问的 https://webvpn.dlut.edu.cn/http/77726476706e69737468656265737421e4f2409f2f7e6c5c6b1cc7a99c406d3690/ 。
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+那么后面这串 777 开头的什么编码是怎么算出来的呢？比较奇葩的是，它之前把 encode 的函数放在了前端代码里，打开控制台就能看到。现在已经下掉了，换成写死的encode 后的网址（在 `data-url`）里。![Screen Shot 2020-01-30 at 15.22.17](./doc/Screen Shot 2020-01-30 at 15.22.17.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 项目结构
 
-### `npm test`
+这是一个简单的由 [Create React App](https://github.com/facebook/create-react-app) 创建的项目。（偷个懒不写了）
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+.
+├── README.md
+├── node_modules
+├── package.json
+├── public
+├── src
+│   ├── components
+│   ├── hooks
+│   ├── utils
+│   ├── App.scss
+│   ├── App.tsx
+│   ├── index.scss
+│   ├── index.tsx
+│   ├── react-app-env.d.ts
+│   └── serviceWorker.ts
+└── tsconfig.json
+```
