@@ -8,6 +8,7 @@
   padding: 0 10vw;
   box-sizing: border-box;
   overflow: hidden;
+  border-radius: 0;
 
   .inline-wrapper {
     display: flex;
@@ -15,6 +16,17 @@
     flex-wrap: wrap;
     align-items: flex-end;
     padding: 24px 0;
+  }
+
+  .fab-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    & > * {
+      margin-top: 12px;
+    }
   }
 
   * {
