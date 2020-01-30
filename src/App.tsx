@@ -1,7 +1,7 @@
-import React, {FC, useState, ChangeEvent, useEffect, useCallback} from 'react';
+import React, {FC, useState, ChangeEvent } from 'react';
 import _ from 'lodash';
 import copy from "copy-to-clipboard";
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -9,7 +9,9 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Snackbar from '@material-ui/core/Snackbar';
+import Typography from "@material-ui/core/Typography/Typography";
 import { encode } from "./utils";
+import { useTheme } from "./hooks/useTheme";
 import './App.scss';
 
 const App: FC = () => {
@@ -19,6 +21,10 @@ const App: FC = () => {
 
     return (
         <Paper className='App'>
+            <Typography variant="h3" style={{ margin: '-20vh 0 30px 0' }}>
+                WebVpn for DUT
+            </Typography>
+
             <div className='inline-wrapper'>
                 <Select
                     style={{ width: '64px', marginRight: 12 }}
@@ -40,7 +46,7 @@ const App: FC = () => {
                 />
             </div>
 
-            <Grid container spacing={1} justify='center'>
+            <Grid container spacing={2} justify='center'>
                 <Grid item xs={12} md={2}>
                     <Button
                         fullWidth
@@ -81,15 +87,11 @@ const App: FC = () => {
     );
 };
 
-const Theme = createMuiTheme({
-    palette: {
-        type: 'light', // TODO: 'dark'
-    },
-});
+
 
 export default () => {
     return (
-        <ThemeProvider theme={Theme}>
+        <ThemeProvider theme={useTheme()}>
             <App />
         </ThemeProvider>
     );

@@ -7,13 +7,14 @@
   width: 100vw;
   padding: 0 10vw;
   box-sizing: border-box;
+  overflow: hidden;
 
   .inline-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-end;
-    padding: 12px 0;
+    padding: 24px 0;
   }
 
   * {
