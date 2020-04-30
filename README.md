@@ -1,6 +1,6 @@
 # WebVpn4DUT
 
-##  What is it for? 
+##  What is this for? 
 
 DUT 之前推出了 WebVpn 方便大家无法使用校园网时也能访问校内网站，但是它支持的网址有限。
 
@@ -15,18 +15,21 @@ DUT 之前推出了 WebVpn 方便大家无法使用校园网时也能访问校�
 ```
 .
 ├── README.md
-├── node_modules
 ├── package.json
 ├── public
 ├── src
-│   ├── components
+│   ├── App.scss
+│   ├── App.tsx
+│   ├── components
+│   │   └── info.tsx
 │   ├── hooks
-│   ├── utils
-│   ├── App.scss
-│   ├── App.tsx
+│   │   └── useTheme.ts     // 用于支持 dark mode
 │   ├── index.scss
-│   ├── index.tsx
-│   ├── react-app-env.d.ts
-│   └── serviceWorker.ts
+│   ├── index.tsx
+│   └── utils
+│       ├── aes-js.js       // encode 算法
+│       ├── encoder.d.ts    // 为了把 js 引入到 ts，定义一个 .d 文件
+│       ├── encoder.js      // encode 算法
+│       └── index.ts
 └── tsconfig.json
 ```
